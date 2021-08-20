@@ -3,6 +3,7 @@
   --secondary-color: #024e76;
   --tertiary-color: #39a6b2;
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,6 +14,7 @@ body {
   color: var(--tertiary-color);
   font-family: Helvetica, Arial, sans-serif;
 }
+
 
 /* HEADER / NAV BAR STYLES START */
 
@@ -73,6 +75,8 @@ header nav ul li a:hover {
 
 /* HEADER / NAVBAR STYLES END */
 
+
+
 /* FOOTER STYLES START */
 footer {
   background: var(--primary-color);
@@ -106,7 +110,7 @@ section {
 
 /* HERO STYLES START */
 .hero {
-  background-image: url("../images/hero-bg.jpg");
+  background-image: url('../images/hero-bg.jpg');
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -144,7 +148,7 @@ section {
 }
 
 .hero-form button:hover {
-  background-color: var(--tertiary-color);
+  background-color: var(--tertiary-color);  
 }
 
 .hero-form h3 {
@@ -162,28 +166,59 @@ section {
   font-size: 16px;
   color: var(--secondary-color);
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 15px; 
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255,255,255, 0.75);
 }
-.checkbox-wrapper input,
-.radio-wrapper input {
+
+.form-input:focus {
+  background-color: rgba(255,255,255, 1);
+  outline: none;
+}
+
+.hero-form label {
+  margin: 0 5px;
+}
+
+.hero-form button {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+} 
+
+.checkbox-wrapper input, .radio-wrapper input {
   opacity: 0;
 }
-.checkbox-wrapper label,
-.radio-wrapper label {
+
+.checkbox-wrapper label, .radio-wrapper label {
   position: relative;
   left: 10px;
   margin: 10px;
   line-height: 1.6;
 }
+
+.checkbox-wrapper label::before, .radio-wrapper label::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  background: rgba(255, 255, 255, 0.75);  
+  border: 1px solid var(--secondary-color);  
+  position: absolute;
+  top: -4px;
+  left: -30px;
+}
+
 .radio-wrapper label::before {
   border-radius: 50%;
 }
+
 .radio-wrapper label::after {
   content: "";
-  width: 20px;
   height: 20px;
+  width: 20px;
   border-radius: 50%;
   background: var(--secondary-color);
   position: absolute;
@@ -196,28 +231,14 @@ section {
   content: "";
   height: 6px;
   width: 14px;
-  border-left: 2px solid #024e76;
-  border-bottom: 2px solid #024e76;
+  border-left: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
   position: absolute;
   left: -26px;
   top: 1px;
   transform: rotate(-58deg);
 }
-.checkbox-wrapper label::before,
-.radio-wrapper label::before {
-  content: "";
-  height: 20px;
-  width: 20px;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid var(--secondary-color);
-  position: absolute;
-  top: -4px;
-  left: -30px;
-}
-.checkbox-wrapper input:checked + label,
-.radio-wrapper input:checked + label {
-  font-weight: bold;
-}
+
 .checkbox-wrapper input + label::after, 
 .radio-wrapper input + label::after {
   content: none;
@@ -227,25 +248,8 @@ section {
 .radio-wrapper input:checked + label::after {
   content: "";
 }
-
-.form-input:focus {
-  background-color: rgba(255, 255, 255, 1);
-  outline: none;
-}
-
-.hero-form label {
-  margin: 0 5px;
-}
-
-.hero-form button {
-  color: #fce138;
-  background-color: var(--secondary-color);
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 10px;
-}
 /* HERO STYLES END */
+
 
 /* SECTION TITLE STYLES START */
 .section-title {
@@ -268,7 +272,6 @@ section {
 /* SECTION TITLE STYLES END */
 
 /* WHAT WE DO STYLES */
-
 .intro p {
   line-height: 1.7;
   color: var(--tertiary-color);
@@ -279,8 +282,9 @@ section {
 }
 /* WHAT YOU DO STYLES END */
 
+
 /* WHAT YOU DO STYLES START */
-.steps {
+.steps { 
   background: var(--primary-color);
 }
 
@@ -288,7 +292,6 @@ section {
   margin: 50px auto;
   padding-bottom: 50px;
   width: 80%;
-  border-bottom: 1px solid var(--tertiary-color);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -350,7 +353,7 @@ section {
   margin: 20px;
   flex: 1;
   background: var(--secondary-color);
-  color: #fce138;
+  color: var(--primary-color);
 }
 
 .trainer img {
@@ -383,7 +386,7 @@ section {
 }
 
 .contact h2 {
-  color: var(--primary-color)
+  color: var(--primary-color);
 }
 
 .contact-info {
@@ -406,20 +409,18 @@ section {
 }
 
 .contact-info h3 {
-  color: #fce138;
+  color: var(--primary-color);
   font-size: 32px;
 }
 
-.contact-info p,
-.contact-info address {
+.contact-info p, .contact-info address {
   margin: 20px 0;
   line-height: 1.5;
   font-size: 16px;
   font-style: normal;
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact-form input, .contact-form textarea {
   border: 1px solid var(--secondary-color);
   display: block;
   padding: 7px 15px;
@@ -429,19 +430,18 @@ section {
   margin-bottom: 15px;
   margin-top: 5px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255,255,255, 0.75);
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  background-color: rgba(255, 255, 255, 1);
+.contact-form input:focus, .contact-form textarea:focus {
+  background-color: rgba(255,255,255, 1);
   outline: none;
 }
 
 .contact-form button {
   width: 100%;
   border: none;
-  background: #fce138;
+  background: var(--primary-color);
   color: var(--secondary-color);
   text-align: center;
   padding: 15px 0;
@@ -495,17 +495,15 @@ section {
     font-size: 20px;
   }
 
-  footer h2,
-  footer div {
+  footer h2, footer div {
     text-align: center;
     width: 100%;
   }
 
-  .hero-cta,
-  .hero-form {
+  .hero-cta, .hero-form {
     width: 100%;
   }
-
+  
   .hero-cta {
     text-align: center;
   }
@@ -513,12 +511,12 @@ section {
   .section-title {
     width: 80%;
   }
-
+  
   .trainer {
     flex: 0 70%;
   }
-
-  .contact-info iframe {
+  
+  .contact-info iframe{
     flex: 1 100%;
   }
 }
@@ -548,11 +546,10 @@ section {
   }
 
   .step-text {
-    flex: 100%;
+    flex: 100%;  
   }
 
-  .trainer-bio h3,
-  .trainer-bio h4 {
+  .trainer-bio h3, .trainer-bio h4 {
     display: block;
   }
 }
